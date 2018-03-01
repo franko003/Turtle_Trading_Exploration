@@ -8,3 +8,8 @@ entered from a price level just above the range high.  We then calculate the dif
 in this entry price and the closing price of Bitcoin 4 weeks later.  The analysis
 is then done on these differences to determine if breaking out above a 4 week high
 price leads to higher prices 4 weeks later.
+
+## The Data
+
+The dataset is aggregated cryptocurrency financial data found at Kaggle.com
+https://www.kaggle.com/philmohun/cryptocurrency-financial-data
