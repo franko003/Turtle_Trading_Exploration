@@ -11,5 +11,6 @@ price leads to higher prices 4 weeks later.
 
 ## The Data
 
-The dataset is aggregated cryptocurrency financial data found at Kaggle.com
+The dataset is cryptocurrency daily price data from [Coinmarketcap.com](https://coinmarketcap.com/), aggregated at [Kaggle.com](https://www.kaggle.com/)
+
 https://www.kaggle.com/philmohun/cryptocurrency-financial-data
