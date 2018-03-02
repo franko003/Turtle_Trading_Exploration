@@ -36,6 +36,10 @@ A better approach in the future would be to establish some trading rules such as
 amount, profit targets, number of positions on a once, etc.  With a more realistic
 approach you could then get a better idea if the strategy is worth actually trading.
 
+After improving the analysis of Bitcoin the next step would then be to apply it to
+other cryptocurrencies, stocks, commodities, etc.  A robust trading strategy would
+show positive expectancy with many different underlying products.
+
 #### Analysis
 
 One main part of this analysis that could be improved immediately is better plotting
