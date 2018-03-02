@@ -21,4 +21,12 @@ https://www.kaggle.com/philmohun/cryptocurrency-financial-data
 2. Look at short trades as well
 3. Better plotting of price information (OHLC bar or candlestick charts)
 4. Different time frames to determine success or failure (not just 28 days)
-5. Need to apply trading rules so that you dont take too many trades in a row
+5. Need to apply trading rules so that you don't take too many trades in a row
+6. Trade sizing to calculate real pnl, wouldn't be just the price change
+7. In testing could have done a large number of random samples and saw how none of
+them could accept the null hypothesis
+
+## References
+
+  * https://stats.stackexchange.com/questions/169383/method-for-a-hypothesis-testing-non-normal-distribution-number-of-retweets
+  * https://stats.stackexchange.com/questions/235243/when-should-i-use-scipy-stats-wilcoxon-instead-of-scipy-stats-ranksums
