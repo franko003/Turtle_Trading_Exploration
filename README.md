@@ -30,3 +30,5 @@ them could accept the null hypothesis
 
   * https://stats.stackexchange.com/questions/169383/method-for-a-hypothesis-testing-non-normal-distribution-number-of-retweets
   * https://stats.stackexchange.com/questions/235243/when-should-i-use-scipy-stats-wilcoxon-instead-of-scipy-stats-ranksums
+  * https://pandas.pydata.org/pandas-docs/stable/
+  * https://docs.scipy.org/doc/
