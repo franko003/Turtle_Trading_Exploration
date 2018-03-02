@@ -9,22 +9,43 @@ in this entry price and the closing price of Bitcoin 4 weeks later.  The analysi
 is then done on these differences to determine if breaking out above a 4 week high
 price leads to higher prices 4 weeks later.
 
-## The Data
+## Data
 
 The dataset is cryptocurrency daily price data from [Coinmarketcap.com](https://coinmarketcap.com/), aggregated at [Kaggle.com](https://www.kaggle.com/)
 
 https://www.kaggle.com/philmohun/cryptocurrency-financial-data
 
-## Shortcomings and Topics for Further Exploration
+## Contents
 
-1. Does not take into account stops
-2. Look at short trades as well
-3. Better plotting of price information (OHLC bar or candlestick charts)
-4. Different time frames to determine success or failure (not just 28 days)
-5. Need to apply trading rules so that you don't take too many trades in a row
-6. Trade sizing to calculate real pnl, wouldn't be just the price change
-7. In testing could have done a large number of random samples and saw how none of
-them could accept the null hypothesis
+The repository consists of the csv data file, a number of Python files and a Jupyter
+notebook.  The Python files are parts of the code that I used to create the Jupyter
+notebook, which seemed logical to modularize.  The notebook encompasses the entire
+project from initial question to topics to explore further.
+
+## Improvements and Topics for Further Exploration
+
+#### Trading
+
+From a real trading perspective this analysis is not very relevant for a number of
+reasons.  First of all, looking at where price is a month after a trade doesn't give
+the full story.  Even if price is higher, it may have gone lower first and forced
+you out of the position.  This analysis also doesn't take into account the short
+side of the market, break-outs below the low range may be relevant as well.  
+
+A better approach in the future would be to establish some trading rules such as risk
+amount, profit targets, number of positions on a once, etc.  With a more realistic
+approach you could then get a better idea if the strategy is worth actually trading.
+
+#### Analysis
+
+One main part of this analysis that could be improved immediately is better plotting
+for this type of data.  Seeing an OHLC type chart for price action is much better
+than a simple line chart.
+
+Also, in the statistical analysis at the end there needs to be more random samples of
+the hypothetical data taken.  Only one sample gives you a picture, but taking a
+larger number of samples and showing that you can reject the null hypothesis with
+all of them would be much more convincing.
 
 ## References
 
