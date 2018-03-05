@@ -100,7 +100,7 @@ def generate_tradelist(df, period, direction='Both'):
 df = pd.read_csv('consolidated_coin_data.csv', skiprows=4, low_memory=False)
 
 # Get user input for coin name, period and direction
-coin_name = input('What cryptocurrency do you want data for?\n')
+coin_name = input('What cryptocurrency do you want data for? (lowercase)\n')
 period = int(input('How many days do you want to include in your break-out range?\n'))
 direction = input('What trade direction do you want to include?\nLong/Short/Both\n')
 

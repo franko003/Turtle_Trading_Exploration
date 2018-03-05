@@ -18,11 +18,18 @@ https://www.kaggle.com/philmohun/cryptocurrency-financial-data
 ## Contents
 
 The repository consists of the csv data file, a Python file, and a Jupyter notebook.  
+
 The Python file is the code portions of the analysis abstracted into functions, and
 can be run separately from the command line to get information on any cryptocurrency
-in the dataset, for any range period, for either/both trade directions.  The notebook
-encompasses the entire project from initial question to topics to explore further,
-focusing only on Bitcoin price data.
+in the dataset, for any range period, for either/both trade directions. Simply run the
+file and follow the prompts.  You can look in the csv file itself for the names of
+the 200 cryptocurrencies available.
+
+The notebook encompasses the entire project from initial question to topics to explore further,
+focusing only on Bitcoin price data.  This is the most interesting part as it includes
+some background, all the visualizations, and trading analysis.
+
+##
 
 ## Improvements and Topics for Further Exploration
 
