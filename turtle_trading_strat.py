@@ -20,6 +20,10 @@ def create_coin_df(df, coin_name):
         the column for name of coin, and the following price data columns, Open, High, Low,
         Close.
     '''
+    # Print message if coin does not exist in csv file
+    if ~df.Currency.str.contains(coin_name).any():
+        print('Coin does not exist in database.  Will return empty dataframe.')
+
     # Create a dataframe of only specific coin and columns of interest
     df_coin = df[df.Currency == coin_name]
     df_coin = df_coin[['Currency', 'Date', 'Open','High', 'Low', 'Close']]
@@ -39,16 +43,18 @@ def create_coin_df(df, coin_name):
 
     return df_coin
 
-
 def create_range_column(df, period):
     ''' This function takes in a dataframe of price data and a integer for the length
         of the period desired for the range.  It then creates two new columns, one
         for the High desired period and one for the Low.  No return, changes input df.
     '''
     # Create new columns
-    df['Range_High'] = df['High'].rolling(window=period).max().shift(1)
-    df['Range_Low'] = df['Low'].rolling(window=period).min().shift(1)
+    try:
+        df['Range_High'] = df['High'].rolling(window=period).max().shift(1)
+        df['Range_Low'] = df['Low'].rolling(window=period).min().shift(1)
 
+    except ValueError:
+        print('Period must be an integer value')
 
 def generate_tradelist(df, period, direction='Both'):
     ''' Inputs are dataframe, period and flag for Long/Short/Both directions, function
@@ -78,7 +84,7 @@ def generate_tradelist(df, period, direction='Both'):
     exit_prices_short_arr = np.array(exit_prices_short)
 
     price_diffs_long = exit_prices_long_arr - entry_prices_long
-    price_diffs_short = exit_prices_short_arr - entry_prices_short
+    price_diffs_short = entry_prices_short - exit_prices_short_arr
 
     # Create list dependant on direction param
     if direction == 'Long':
@@ -90,26 +96,30 @@ def generate_tradelist(df, period, direction='Both'):
 
     return price_diffs_final
 
-
 # Read in all data from the Coinmarketcap file
 df = pd.read_csv('consolidated_coin_data.csv', skiprows=4, low_memory=False)
 
 # Get user input for coin name, period and direction
 coin_name = input('What cryptocurrency do you want data for?\n')
-period = input('How many days do you want to include in your break-out range?\n')
+period = int(input('How many days do you want to include in your break-out range?\n'))
 direction = input('What trade direction do you want to include?\nLong/Short/Both\n')
 
-# Run through the functions to generate the correct trade data
+# Create the new dataframe and check
 df_coin = create_coin_df(df, coin_name)
 
 print('These are the first 10 rows of the new {} dataframe.'.format(coin_name))
 print(df_coin.head(10))
 
+# Create the new columns for the range and check
 create_range_column(df_coin, period)
 
-print(df_coin.head())
+print('Added new columns to the dataframe')
+print(df_coin.tail())
 
+# Generate the tradelist and print number of trades and average price change
 price_diff_list = generate_tradelist(df_coin, period, direction)
+trade_count = len(price_diff_list)
+ave_price_diff = price_diff_list.mean()
 
-print(len(price_diff_list))
-print(price_diff_list.mean())
+print('Total number of trades: {}'.format(trade_count))
+print('Average price change per trade: {}'.format(ave_price_diff))
