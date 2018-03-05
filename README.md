@@ -17,10 +17,12 @@ https://www.kaggle.com/philmohun/cryptocurrency-financial-data
 
 ## Contents
 
-The repository consists of the csv data file, a number of Python files and a Jupyter
-notebook.  The Python files are parts of the code that I used to create the Jupyter
-notebook, which seemed logical to modularize.  The notebook encompasses the entire
-project from initial question to topics to explore further.
+The repository consists of the csv data file, a Python file, and a Jupyter notebook.  
+The Python file is the code portions of the analysis abstracted into functions, and
+can be run separately from the command line to get information on any cryptocurrency
+in the dataset, for any range period, for either/both trade directions.  The notebook
+encompasses the entire project from initial question to topics to explore further,
+focusing only on Bitcoin price data.
 
 ## Improvements and Topics for Further Exploration
 
