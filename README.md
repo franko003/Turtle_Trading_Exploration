@@ -17,11 +17,11 @@ https://www.kaggle.com/philmohun/cryptocurrency-financial-data
 
 ## Contents
 
-The repository consists of the csv data file, a Python file, and a Jupyter notebook.  
+The repository consists of the csv data file, two Python files, and a Jupyter notebook.  
 
-The Python file is the code portions of the analysis abstracted into functions, and
-can be run separately from the command line to get information on any cryptocurrency
-in the dataset, for any range period, for either/both trade directions. Simply run the
+The Python files are the code portions of the analysis abstracted into a `util.py` file of functions, and
+a `range_break_out_main.py` file which can be run separately from the command line to get information on any 
+cryptocurrency in the dataset, for any range period, for either/both trade directions. Simply run the
 file and follow the prompts.  You can look in the csv file itself for the names of
 the 200 cryptocurrencies available.
 
